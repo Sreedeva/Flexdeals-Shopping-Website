@@ -8,6 +8,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
     )
+
+import blog
 from .models import Post
 
 def home(request):
@@ -59,3 +61,10 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 def about(request):
     return render(request, 'Blog/about.html',{'title' : 'About1', 'posts' : 'context.posts'})
+
+def searchbar(request):
+    if request.method == "GET":
+        search = request.GET.get("q")
+        post = Post.objects.all().filter(title = search)
+        # post = Post.objects.all()
+        return render(request, 'Blog/searchbar.html', {'posts' : post})

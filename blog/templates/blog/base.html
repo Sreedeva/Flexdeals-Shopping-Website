@@ -45,6 +45,10 @@
                         {% endif %}
                     </div>
                 </div>
+                <form action="{% url 'searchbar' %}" method="get">
+                    <input type="text" name="q">
+                    <button type="submit">Search</button>
+                </form>
             </div>
         </nav>
     </header>

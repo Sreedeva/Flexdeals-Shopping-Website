@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
+import links 
 from users import views as users_views 
+from links import views as links_views 
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -8,7 +10,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', include('blog.urls')),
+    path('', include('links.urls')),
     path('admin/', admin.site.urls),
     path('register/', 
         users_views.register,
