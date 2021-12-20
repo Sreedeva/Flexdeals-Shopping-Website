@@ -96,7 +96,7 @@ class Fetch_Data:
         # Amazon Ratings
         amzn_rating = self.amzn_soup.find_all('span', class_='a-icon-alt', limit=10)
         for i in range(len(amzn_rating)):
-            ratings.append(amzn_rating[i].text)
+            ratings.append(amzn_rating[i].text.replace(" out of 5 stars",""))
             
         # Flipkart Ratings
         flkt_rating = self.flkt_soup.find_all('div', class_='_3LWZlK', limit=24)

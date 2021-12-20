@@ -1,6 +1,7 @@
 {% extends "links/base.html" %}
 {% load static %}
-{% block corousel %}
+
+{% block corousel %} 
 <!-- Automated Carousels-->
 <div id="carouselExampleControls" class="carousel slide my-5" data-ride="carousel">
     <div class="carousel-inner">
@@ -35,16 +36,19 @@
 {% block product_cards %}
 <div class="row mx-auto container mt-5 product-content">
     {% for item in data %}
-    <div class="col-lg-3 col-md-4 col-12 text-center my-2 py-3" id="item-card">
-        <img src="{{item.4}}" alt="" class="img-fluid mb-3">
-        <!--<i class="fas fa-heart product-heart"></i>-->
-        <div class="">
-            <h4 class="">{{item.2}}</h4>
-            <h5 class="">{{item.0}}</h5>
-            <p>{{item.1}}</p>
-            <p>{{item.5}}</p>
-            <a href="{{item.3}}">Link</a>
-        </div>
+    <div class="col-lg-3 col-md-4 col-12 my-2 py-3" id="item-card">
+        <a class="prod-link" href={{item.3}}>
+            <img src="{{item.4}}" alt="" class="img-responsive d-flex mx-auto mb-3" id="card-img">
+            <!--<i class="fas fa-heart product-heart"></i>-->
+            <div class="">
+                <div class="text-center">
+                    <h4 class="">{{item.2}}</h4>
+                    <span class="">{{item.5}} off</span>
+                </div>
+                <div class="text-center"><p class="text-left">{{item.1}} out of 5</p></div>
+                <p class="mb-0">{{item.0}}</p>
+            </div>
+        </a>
     </div>
     {% endfor %}
 </div>

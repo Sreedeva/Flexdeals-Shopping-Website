@@ -12,10 +12,8 @@ from django.http import HttpResponseRedirect
 
 
 from bs4 import BeautifulSoup as Soup
-import csv
 import os
 from django.conf import settings
-import time
 import requests
 
 
@@ -46,6 +44,47 @@ def scraping(request):
 def entertainment(request):
 
     entry = "entertainment"
+    f = Fetch_Data(entry)
+    
+    context = {
+        'data' : f.Scrap()
+    }
+    return render(request,'links/searchpage.html',context)
+
+def beauty(request):
+
+    entry = "beauty"
+    f = Fetch_Data(entry)
+    
+    context = {
+        'data' : f.Scrap()
+    }
+    return render(request,'links/searchpage.html',context)
+
+def clothing(request):
+
+    entry = "clothing"
+    f = Fetch_Data(entry)
+    
+    context = {
+        'data' : f.Scrap()
+    }
+    return render(request,'links/searchpage.html',context)
+
+
+def appliances(request):
+
+    entry = "appliances"
+    f = Fetch_Data(entry)
+    
+    context = {
+        'data' : f.Scrap()
+    }
+    return render(request,'links/searchpage.html',context)
+
+def electronics(request):
+
+    entry = "electronics"
     f = Fetch_Data(entry)
     
     context = {
