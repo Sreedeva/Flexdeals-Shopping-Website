@@ -14,6 +14,7 @@ import os
 import django_heroku
 from pathlib import Path
 import django 
+import dj_database_url
 
 from django.contrib.auth.decorators import login_required
 from django.forms.widgets import EmailInput
@@ -29,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0=o9fgm4n6^9abv0za653=a@6j8rh3r78co-v_@-=i-(sp*+hj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["https://flexdeal.herokuapp.com/",'localhost','127.0.0.1']
 
@@ -46,11 +47,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

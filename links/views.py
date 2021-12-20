@@ -30,7 +30,7 @@ def home_view(request):
     context = {
         'data' : a
     }
-    return render(request, 'links/searchpage.html',context)
+    return render(request, 'links/index.html',context)
 
 
 def scraping(request):
