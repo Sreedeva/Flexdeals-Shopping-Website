@@ -1,4 +1,4 @@
-# Comparision Shopping Website
+# FlexDeals Shopping Website
 <img src="https://user-images.githubusercontent.com/82641218/142112248-0acaa16f-2097-47b9-9467-6879fcad5f82.png" width="500" height="500">
 
 ## Project Objective:
